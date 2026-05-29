@@ -53,37 +53,35 @@ aligned reads: 48.1M
 Due to the imbalanced number of reads in the samples (see /home/joao/RNAseq_RNAi/rnaseq/test1/multiqc/star_salmon/multiqc_report.html) we tested DESeq2 and EdgeR algorthims
 
 for deseq2 we used vst (variance stabilization transformation) and to filter low count genes:
-min_count <- 1
-min_samples <- 5
-
-lfc_threshold <- 1
-padj_threshold <- 0.05
+ - min_count <- 1
+ - min_samples <- 5
+ - lfc_threshold <- 1
+ - padj_threshold <- 0.05
 
 
 in edgeR we used: "TMM", filterByExpr() taht scales the count threshold to effective library sizes, which is critical, and:
-min_count        <- 3   # minimum count (not CPM) in the smallest group
-min_total_count  <- 12   # minimum total count across all samples
-large_n          <- 3   # sample-size threshold used internally by filterByExpr
-
-lfc_threshold  <- 1     # |log2 fold change| threshold
-padj_threshold <- 0.05  # FDR (BH) threshold
+- min_count        <- 3   # minimum count (not CPM) in the smallest group
+- min_total_count  <- 12   # minimum total count across all samples
+- large_n          <- 3   # sample-size threshold used internally by filterByExpr
+- lfc_threshold  <- 1     # |log2 fold change| threshold
+- padj_threshold <- 0.05  # FDR (BH) threshold
 
 - Principal component analysis: We load the quantification data produced by Salmon into DESeq2 and EdgeR and used the transformed counts.
 
-    - PCA EdgeR
+   - PCA EdgeR
 ![PCA_edger](test1/star_salmon/edger_qc/all_pca.png)
 
-  Initial genes: 6659
-  Genes after filtering: 6189
-  Genes removed:         470 (7.1%)
+  - Initial genes: 6659
+  - Genes after filtering: 6189
+  - Genes removed:         470 (7.1%)
 
 
    - PCA DESeq2
 ![PCA_DESeq2](test1/star_salmon/deseq2_qc/all_pca.png)
 
-Initial genes: 6659
-  Genes after filtering: 6256
-  Genes removed: 403 (6.1%)
+  - Initial genes: 6659
+  - Genes after filtering: 6256
+  - Genes removed: 403 (6.1%)
 
 
 ### 5. **Differential Expression Analysis (DEA)**
@@ -103,9 +101,9 @@ for example downregulated genes in in_planta_IAC66_6_vs_in_vitro mean genes diff
 ![DESeq2_vs_EdgeR](test1/star_salmon/method_comparison/comparison_combined.png)
 
 
-- results DESeq2: /home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/deseq2_qc
-- results EdgeR: /home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc
-- results Comparison: /home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/method_comparison
+- results DESeq2: `/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/deseq2_qc`
+- results EdgeR: `/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc`
+- results Comparison: `/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/method_comparison`
 
 
 EdgeR is recommended in cases of inbalanced libraries (as this case), EdgeR groups better the samples in the PCA and DESeq2 clearly shows a bias in upregulated genes.
@@ -134,12 +132,12 @@ To get insights about the function and the processes that are represented by the
 
 See erichment results for all contrastas in the server
 
-/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/in_planta_IAC66_6_vs_in_vitro/GO_enrichment
-/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/in_planta_IAC66_6_vs_whip/GO_enrichment
-/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/in_planta_SP803280_vs_in_planta_IAC66_6/GO_enrichment
-/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/in_planta_SP803280_vs_in_vitro/GO_enrichment
-/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/in_planta_SP803280_vs_whip/GO_enrichment
-/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/in_vitro_vs_whip/GO_enrichment
+- `/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/in_planta_IAC66_6_vs_in_vitro/GO_enrichment`
+- `/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/in_planta_IAC66_6_vs_whip/GO_enrichment`
+- `/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/in_planta_SP803280_vs_in_planta_IAC66_6/GO_enrichment`
+- `/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/in_planta_SP803280_vs_in_vitro/GO_enrichment`
+- `/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/in_planta_SP803280_vs_whip/GO_enrichment`
+- `/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/in_vitro_vs_whip/GO_enrichment`
 
 ### 7. **Gene Profiling**
 
@@ -150,7 +148,7 @@ We investigated the expression patterns of this genes g3310, g2005, g2611, g2814
 
 see complete results in the server in: 
 
-/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/gene_profiles
+`/home/joao/RNAseq_RNAi/rnaseq/test1/star_salmon/edger_qc/gene_profiles`
 
 
 
