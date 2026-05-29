@@ -32,7 +32,7 @@ This repository accompanies the study of the molecular mechanisms of infection o
 
 ### 2. **Protein Annotation**
 
-We used `emapper-2.1.3` from `EggNOG v5.0` to get KEGG orthology annotations for the proteins of the genome based on orthology relationships. 
+We used `emapper-2.1.3` from `EggNOG v5.0` to get annotations (included GO annotations) for the proteins of the genome based on orthology relationships. 
 - Code: `eggnog/run_eggnog.sh`
 - Results: /dados01/jorge/bianca/references/PEDRO_genome/annotation/proteins.emapper.emapper.annotations`
 
