@@ -1,4 +1,4 @@
-# RNAseq analysis of *Fusarium verticillioides*
+# RNAseq analysis of *Sporisorium scitamineum*
 
 ## Overview
 
